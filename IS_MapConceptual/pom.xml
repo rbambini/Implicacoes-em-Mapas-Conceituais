@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.ufes.inf.lied</groupId>
+	<artifactId>TesteSpring</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>Implicacoes Significantes em Mapas Conceituais</name>
+	<description>Aplicacao das implicacoes de Piaget</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.2.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<project.basedir>/Users/Ramon/Documents/workspace-sts-3.9.5.RELEASE/IS_MapConceptual</project.basedir>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<!-- dependencia tomcat -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.cogroo.lang.pt_br</groupId>
+			<artifactId>cogroo-ann-pt_br</artifactId>
+			<version>4.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.opennlp</groupId>
+			<artifactId>opennlp-tools</artifactId>
+			<version>1.8.4</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
+			<!-- http://maven.apache.org/plugins/maven-war-plugin/examples/adding-filtering-webresources.html -->
+			<!-- Configuracao para gerar o WAR -->
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<archiveClasses>true</archiveClasses>
+					<webResources>
+						<resource>
+							<!-- this is relative to the pom.xml directory -->
+							<directory>${project.basedir}/src/main/resources</directory>
+							<includes>
+								<include>**</include>
+							</includes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+		<!-- Configuracao para gerar o WAR -->
+		<directory>${project.basedir}/target</directory>
+		<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+			</resource>
+		</resources>
+		<!-- Configuracao para gerar o WAR -->
+	</build>
+
+</project>

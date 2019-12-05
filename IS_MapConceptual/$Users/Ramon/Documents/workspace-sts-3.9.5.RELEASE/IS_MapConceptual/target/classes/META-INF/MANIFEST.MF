@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Implicacoes Significantes em Mapas Conceituais
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Ramon
+Implementation-Vendor-Id: br.ufes.inf.lied
+Build-Jdk: 1.8.0_172
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/TesteSpring
+Created-By: Maven Integration for Eclipse
+
